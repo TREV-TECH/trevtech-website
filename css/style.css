@@ -1,0 +1,509 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #222;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav {
+  position: fixed;
+  background-color: #102234;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 20px 0; */
+  transition: all 0.3s ease-in-out;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+}
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav.active {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav.active a {
+  color: #000;
+}
+
+.nav.active .container {
+  padding: 10px 0;
+}
+
+.nav a.current,
+.nav a:hover {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+.hero {
+  background-image: url(https://img.freepik.com/free-vector/digital-global-connection-network-technology-background_1017-23324.jpg?w=1380&t=st=1686121594~exp=1686122194~hmac=cbbe7dcf7348edc481f07c8c8a2c75ed1d0d3c3fafeb693d229f99cdcd1d6ad4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  z-index: -2;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 46px;
+  margin: -20px 0 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.content h2,
+.content h3 {
+  font-size: 150%;
+  margin: 20px 0;
+}
+
+.content p {
+  color: #555;
+  line-height: 30px;
+  letter-spacing: 1.1px;
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+}
+.more button {
+  color: #102234;
+  border-radius: 5%;
+  background-color: rgb(250, 250, 255);
+  border: none;
+  padding: 14px 40px;
+  margin: 8px;
+}
+
+.services {
+  text-align: center;
+}
+
+.more-services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+  margin-top: 70px;
+}
+
+.more-services button {
+  background-color: #102234;
+  color: wheat;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.card-container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  justify-content: space-between; /* Distribute cards evenly */
+}
+
+.card {
+  flex-basis: 100%; /* Cards take up full width by default */
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+  border-radius: 30px;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .card {
+    flex-basis: 30%; /* Show 3 cards per row on medium-sized devices */
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    flex-basis: 30%; /* Show 3 cards per row on large-sized devices */
+  }
+}
+
+.content-section {
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.item {
+  flex-basis: calc(
+    33.33% - 20px
+  ); /* Adjust the width of each item based on the number of items per row */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.numbering {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #888;
+}
+
+.container-last {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.blue-circle {
+  background-color: #3498db;
+  z-index: 1;
+}
+
+.white-circle {
+  background-color: #65aace;
+  z-index: 2;
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.circle-text h2 {
+  font-size: 40px;
+  color: #fff;
+  margin: 0;
+}
+
+.circle-text p {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+}
+
+.content-last {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.content-column {
+  flex-basis: 33.33%;
+  text-align: center;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .circle {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+.footer {
+  background-color: #f0f0f0;
+  padding: 40px 0;
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.social-icons a:hover {
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* styles.css */
+.contact-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px;
+}
+
+
+.container-contact {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-contact {
+  width: 100%;
+  max-width: 500px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.card-contact h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-info li i {
+  margin-right: 10px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: calc(50% - 10px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-about {
+  background-color: #f9f9f9;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content-about {
+  padding: 50px 0;
+}
+
+.content-about h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  margin-bottom: 20px;
+}
+
+.content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+
