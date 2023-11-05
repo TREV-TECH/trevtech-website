@@ -179,31 +179,47 @@ body {
   }
 }
 
-.content-section {
+.background-container {
   background-color: lightblue;
   padding: 20px;
+  text-align: center;
 }
 
-.row {
+.reasons {
+  margin-top: 20px;
+}
+
+.content-section {
+  margin-top: 20px;
+}
+
+.top-row,
+.bottom-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
 .item {
-  flex-basis: calc(
-    33.33% - 20px
-  ); /* Adjust the width of each item based on the number of items per row */
+  flex-basis: calc(33.33% - 20px);
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .numbering {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+.dotted-line {
+  border: none;
+  border-top: 2px dotted #333;
+  margin: 10px auto;
+  width: 50%;
 }
 
 h3 {
@@ -218,83 +234,64 @@ p {
 
 .container-last {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 20px;
 }
 
-.circle {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
 .blue-circle {
   background-color: #3498db;
-  z-index: 1;
-}
-
-.white-circle {
-  background-color: #65aace;
-  z-index: 2;
+  flex-basis: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  margin-right: 20px;
 }
 
 .circle-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .circle-text h2 {
   font-size: 40px;
-  color: #fff;
   margin: 0;
 }
 
 .circle-text p {
   font-size: 14px;
-  color: #fff;
   margin: 0;
 }
 
 .content-last {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
   flex-direction: column;
-}
-
-.content-column {
-  flex-basis: 33.33%;
-  text-align: center;
   color: #555;
 }
 
+.content-column {
+  text-align: center;
+  margin-top: 20px;
+}
+
 @media (max-width: 768px) {
-  .container {
+  .container-last {
     flex-direction: column;
     text-align: center;
   }
 
-  .circle {
+  .blue-circle {
+    margin-right: 0;
     margin-bottom: 20px;
   }
 }
-
-
-
-
 
 .footer {
   background-color: #f0f0f0;
   padding: 40px 0;
 }
-
 
 .row {
   display: flex;
@@ -344,44 +341,47 @@ li {
   color: #000;
 }
 
+.company-logo {
+  width: 150px; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Add rounded corners */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-/* styles.css */
-.contact-section{
+.contact-section {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 60px;
 }
 
-
 .container-contact {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card-contact {
-  width: 100%;
-  max-width: 500px;
+  width: calc(50% - 10px);
   background-color: #f1f1f1;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px; /* Increase the height */
 }
 
 .card-contact h2 {
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Increase margin for better spacing */
+}
+
+.contact-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-info {
@@ -403,79 +403,27 @@ form input,
 form textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px; /* Add border radius */
 }
 
 form button {
-  background-color: #4CAF50;
+  background-color: #5bc0de; /* Light blue color */
   color: white;
-  padding: 10px 20px;
+  padding: 10px 40px; /* Larger horizontally */
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 form button:hover {
-  background-color: #45a049;
+  background-color: #46b8da; /* Slightly darker on hover */
 }
 
-@media (min-width: 768px) {
-  .container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .card {
-    width: calc(50% - 10px);
-  }
+.light-blue-icon {
+  color: #5bc0de; /* Light blue color for the icons */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .hero-about {
   background-color: #f9f9f9;
@@ -505,5 +453,3 @@ form button:hover {
   list-style-type: disc;
   margin-left: 20px;
 }
-
-
