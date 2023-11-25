@@ -5,37 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>TrevTechLtd</title>
+    <link rel="icon" type="image/x-icon" href="./assets/trevtechlogo.png">
   </head>
 
   <body>
-    <nav class="nav">
-      <div class="container">
-        <h1 class="logo">
-          <a href="/index.html">
-            <img src="./assets/trevtechlogo.png" alt="" />
-          </a>
-        </h1>
-        <ul>
-          <li><a href="#" class="currents">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+
+<nav class="nav">
+  <div class="container2">
+    <h1 class="logo">
+      <a href="/index.html">
+        <img src="./assets/trevtechlogo.png" alt="" />
+      </a>
+    </h1>
+    <div class="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" class="currents">Home</a></li>
+      <li><a href="#about-us-section">About</a></li>
+      <li><a href="#services-section">Services</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
     <div class="hero">
       <div class="container">
         <h1>IT SOLUTIONS FOR YOU</h1>
         <p>Raising Technological Starndards</p>
 
         <div class="more">
-          <button>Learn More</button>
-          <button>Contact us</button>
+          <!-- <button><a href="#about-section">Learn More</a></button>
+          <button><a href="#contact-section">Contact us</a></button>           -->
         </div>
       </div>
     </div>
 
-    <section class="container content">
+    <section id="services-section" class="container content">
       <h1 class="services">Our services</h1>
 
       <div class="card-container">
@@ -47,9 +59,7 @@
           </div>
           <h3>Web Development</h3>
           <p>
-            Description for Card 1 Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Incidunt optio, similique amet voluptas
-            accusantium fugit quaerat velit commodi quasi nihil
+            Revolutionize your online presence with our expert web development service. We craft captivating, user-friendly websites tailored to your needs. Our team merges cutting-edge technology with creative design to bring your vision to life.
           </p>
         </div>
 
@@ -59,9 +69,7 @@
           </div>
           <h3>Mobile App Development</h3>
           <p>
-            Description for Card 2 Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Incidunt optio, similique amet voluptas
-            accusantium fugit quaerat velit commodi quasi nihil
+            Unlock the power of mobile with our bespoke development solutions. Our team specializes in creating sleek, high-performance mobile applications designed to captivate and engage users.
           </p>
         </div>
 
@@ -71,24 +79,72 @@
           </div>
           <h3>Cyber Security</h3>
           <p>
-            Description for Card 3 Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Incidunt optio, similique amet voluptas
-            accusantium fugit quaerat velit commodi quasi nihil
+            Safeguard your digital assets with our robust cybersecurity solutions for mobile and web applications. We specialize in fortifying your apps against evolving cyber threats, ensuring data integrity, confidentiality, and user privacy.
           </p>
         </div>
       </div>
-
-      <div class="more-services">
-        <button>More Services</button>
-      </div>
     </section>
 
+    <section>
+      <div>
+      <div class="more-services">
+        <button>More of our Services</button>
+      </div>
+    <div class="service-description">
+        <div class="description">
+          <h2>Fin-Tech Application</h2>
+          <p>An innovative solution tailored for micro-finances, SACCOS, and financial institutions, <br>
+             Pesa Whiz serves as a versatile platform for managing loans, savings, and financial transactions with ease and efficiency. 
+             <br>
+             Streamline your processes, empower your customers, and drive financial inclusion with our feature-rich application.</p>
+        </div>
+      <div class="application-image">
+        <img src="./assets/apps.png" alt="Pesa Whiz Application Image">
+      </div>
+    </div>
+    </div>
+
+    <div>
+    <div class="service-description">
+      <div class="application-image">
+        <img src="./assets/app3.png" alt="Pesa Whiz Application Image">
+      </div>
+        <div class="description">
+          <h2>Savings Module</h2>
+          <p>Our innovative application goes beyond conventional services,<br>
+            introducing a dynamic savings module that enables customers to personalize and achieve their financial goals. <br>
+            With Pesa Whiz, customers gain access to a versatile savings feature, allowing them to define and pursue tailored financial objectives. <br>
+             Our customizable savings module empowers individuals to set personalized goals, ensuring a seamless and user-centric saving experience. <br>
+              Drive financial inclusion and empower your clientele by providing them with a feature-rich application that adapts to their unique financial aspirations.</p>
+        </div>
+    </div>
+    </div>
+
+
+
+    <div>
+    <div class="service-description">
+        <div class="description">
+          <h2>Loans Module</h2>
+          <p>
+            Tailored for micro-finances, SACCOs, and financial institutions, <br> Pesa Whiz offers a versatile platform for seamless loan management. <br> Institutions can craft customized loan products and leverage our advanced scoring engine for precise customer evaluations. <br> Drive financial inclusivity with tailored lending solutions and dynamic scoring methodologies.</p>
+        </div>
+      <div class="application-image">
+        <img src="./assets//mobileapp.png" alt="Pesa Whiz Application Image">
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+    
 
 
 
 
 
-    <section class="hero-about">
+
+    <section id="about-us-section" class="hero-about">
       <div class="container">
         <h1 class="services">About Us</h1>
       </div>
@@ -124,15 +180,15 @@
 
 
 
-  <section class="contact-section">
+  <section id="contact-section" class="contact-section">
     <div class="container-contact">
       <div class="card-contact">
         <div class="contact-info-container">
-          <h2>Contact Information</h2>
+          <h2>Contact Info</h2>
           <ul class="contact-info">
-              <li><i class="fas fa-phone light-blue-icon"></i> +1 123-456-7890</li>
-              <li><i class="fas fa-envelope light-blue-icon"></i> info@example.com</li>
-              <li><i class="fas fa-map-marker-alt light-blue-icon"></i> 123 Street, City, Country</li>            
+              <li><i class="fas fa-phone light-blue-icon"></i> +254792691810</li>
+              <li><i class="fas fa-envelope light-blue-icon"></i> info@trevtech.com</li>
+              <!-- <li><i class="fas fa-map-marker-alt light-blue-icon"></i> 123 Street, City, Country</li>             -->
           </ul>
         </div>
       </div>
@@ -210,39 +266,39 @@
                     <div class="numbering">01</div>
                     <hr class="dotted-line">
                     <h3>High Quality Software</h3>
-                    <p>Description 1</p>
+                    <p class="desc">We specialize in crafting high-quality, robust, and scalable software solutions tailored to meet your unique business needs. Our meticulous approach to development ensures that our software not only meets but exceeds industry standards, providing reliable performance and user satisfaction</p>
                 </div>
                 <div class="item">
                     <div class="numbering">02</div>
                     <hr class="dotted-line">
-                    <h3>Another Reason</h3>
-                    <p>Description 2</p>
+                    <h3>Expertise and Experience</h3>
+                    <p>With years of experience and a team of skilled professionals, we bring unparalleled expertise to the table. Our track record of successful projects and a deep understanding of the latest technologies enable us to deliver innovative solutions that drive your business forward.</p>
                 </div>
                 <div class="item">
                     <div class="numbering">03</div>
                     <hr class="dotted-line">
-                    <h3>Yet Another Reason</h3>
-                    <p>Description 3</p>
+                    <h3>Innovative Solutions</h3>
+                    <p>We thrive on innovation, constantly exploring new technologies and methodologies to provide cutting-edge solutions. Our commitment to staying ahead of the curve ensures that our clients benefit from the latest innovations, gaining a competitive edge in their industries.</p>
                 </div>
             </div>
             <div class="row bottom-row">
                 <div class="item">
                     <div class="numbering">04</div>
                     <hr class="dotted-line">
-                    <h3>One More Reason</h3>
-                    <p>Description 4</p>
+                    <h3>Customized Services</h3>
+                    <p>Recognizing that every business is unique, we offer tailor-made solutions that perfectly align with your specific requirements. Our flexible approach allows us to adapt and customize our services, ensuring that your business goals are not just met, but exceeded.</p>
                 </div>
                 <div class="item">
                     <div class = "numbering">05</div>
                     <hr class="dotted-line">
-                    <h3>Fifth Reason</h3>
-                    <p>Description 5</p>
+                    <h3>Timely Support and Maintenance</h3>
+                    <p>We understand the importance of reliable support and ongoing maintenance. Our dedicated team is available to provide timely assistance, ensuring that your systems run smoothly without any interruptions. Proactive maintenance keeps your technology up-to-date and secure.</p>
                 </div>
                 <div class="item">
                     <div class="numbering">06</div>
                     <hr class="dotted-line">
-                    <h3>Last Reason</h3>
-                    <p>Description 6</p>
+                    <h3>Partnerships and Collaborations</h3>
+                    <p>We foster strategic partnerships and collaborations with industry-leading organizations, enhancing our capabilities and offering our clients access to a broader spectrum of expertise. These partnerships enable us to deliver comprehensive solutions that meet diverse business needs.</p>
                 </div>
             </div>
         </section>
@@ -260,7 +316,7 @@
       <div class="circle blue-circle">
         <div class="circle-text">
           <h2>10 +</h2>
-          <p>years of experience</p>
+          <p class="exp">years of <br> experience</p>
         </div>
       </div>
       <div class="content-last">
@@ -303,18 +359,18 @@
           <div class="col">
             <h4>Contact Us</h4>
             <ul>
-              <li>Email: info@example.com</li>
-              <li>Phone: +1 123 456 7890</li>
-              <li>Address: 123 Tech Street, City, State, ZIP</li>
+              <li>Email: info@trevtech.com</li>
+              <li>Phone: +254 792 691 810</li>
+              <!-- <li>Address: 123 Tech Street, City, State, ZIP</li> -->
             </ul>
           </div>
           <div class="col">
             <h4>Follow Us</h4>
             <ul class="social-icons">
-              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.facebook.com/trevtech1/"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="https://twitter.com/trevtech1"><i class="fab fa-twitter"></i></a></li>
+              <!-- <li><a href="#"><i class="fab fa-linkedin"></i></a></li> -->
+              <li><a href="https://www.instagram.com/trev_tech/"><i class="fab fa-instagram"></i></a></li>
             </ul>
           </div>
         </div>
@@ -334,5 +390,18 @@
       crossorigin="anonymous"
     ></script>
     <script src="contact.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.menu-toggle').click(function() {
+          $('.nav-links').toggleClass('active');
+          $('.nav').toggleClass('active');
+          $('.menu-toggle').toggleClass('close'); // Add this line to toggle the class
+        });
+      });
+    </script>
+    
+
   </body>
 </html>
