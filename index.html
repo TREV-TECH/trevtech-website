@@ -6,23 +6,46 @@
     <title>TrevTech Solutions | Web Development, Cybersecurity & Fintech</title>
     <link rel="stylesheet" href="./css/style.css" />
 
-  <!-- Basic favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  
-  <!-- PNG favicons for different sizes -->
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-  
-  <!-- Apple Touch Icon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
-  
-  <!-- Android Chrome -->
-  <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon/android-chrome-512x512.png">
-  
-  <!-- Web App Manifest -->
-  <link rel="manifest" href="/site.webmanifest">
+    <!-- Basic favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
+    <!-- PNG favicons for different sizes -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Android Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="./assets/favicon/android-chrome-512x512.png"
+    />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <!-- Header -->
@@ -386,9 +409,18 @@
               Subscribe to our newsletter for the latest updates on technology
               trends and company news.
             </p>
-            <form class="newsletter-form">
-              <input type="email" placeholder="Enter your email" />
-              <button type="submit">
+
+            <!-- ✅ Add ID here -->
+            <form id="newsletterForm" class="newsletter-form">
+              <!-- ✅ Add ID here -->
+              <input
+                type="email"
+                id="emailInput"
+                placeholder="Enter your email"
+              />
+
+              <!-- ✅ Add ID here -->
+              <button type="submit" id="submitBtn">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
@@ -402,6 +434,9 @@
                 </svg>
               </button>
             </form>
+
+            <!-- ✅ Add this for showing feedback messages -->
+            <div id="newsletterMessage" class="newsletter-message"></div>
           </div>
         </div>
 

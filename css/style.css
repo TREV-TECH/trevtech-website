@@ -857,3 +857,28 @@
     padding: 10px 0;
   }
 }
+
+
+
+.newsletter-message {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.newsletter-message.show {
+  opacity: 1;
+}
+
+.newsletter-message.success {
+  color: #4caf50;
+}
+
+.newsletter-message.error {
+  color: #f44336;
+}
+
+input.error {
+  border: 1px solid #f44336;
+}
