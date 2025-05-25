@@ -165,23 +165,29 @@ document.addEventListener('DOMContentLoaded', function () {
         // Simulate API call
         setLoading(true);
 
-        try {
-            // Simulate network delay
-            await new Promise(resolve => setTimeout(resolve, 1500));
+try {
+    const response = await fetch('http://192.168.100.4:8089/newsletter/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(email)
+    });
 
-            // In a real application, you would send the email to your backend
-            // Example: await fetch('/api/newsletter/subscribe', { method: 'POST', body: JSON.stringify({ email }) });
+    if (!response.ok) {
+        throw new Error('Subscription failed');
+    }
 
-            // Success simulation
-            showMessage('🎉 Successfully subscribed to our newsletter!', 'success');
-            emailInput.value = '';
-            emailInput.classList.remove('error');
+    const result = await response.text();
+    showMessage(`🎉 ${result}`, 'success');
+    emailInput.value = '';
+    emailInput.classList.remove('error');
 
-        } catch (error) {
-            showMessage('Something went wrong. Please try again.', 'error');
-        } finally {
-            setLoading(false);
-        }
+} catch (error) {
+    showMessage('Something went wrong. Please try again.', 'error');
+}
+
+
     });
 
     // Add some nice hover effects
