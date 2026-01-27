@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // ============================================
-// GSAP ANIMATIONS (SUBTLE ENHANCEMENTS)
+// GSAP ANIMATIONS
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -180,60 +180,504 @@ document.addEventListener('DOMContentLoaded', function() {
     // Register ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero section entrance
-    gsap.from(".cosmic-brand-matrix", {
+    // ========== HERO LANDING SECTION ==========
+    const heroTl = gsap.timeline();
+    
+    heroTl
+        .from(".cosmic-brand-matrix", {
+            duration: 1.2,
+            y: 100,
+            opacity: 0,
+            ease: "power4.out"
+        })
+        .from(".neural-tagline-stream", {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out"
+        }, "-=0.7")
+        .from(".plasma-action-pod", {
+            duration: 0.8,
+            scale: 0.5,
+            opacity: 0,
+            ease: "back.out(1.7)"
+        }, "-=0.5");
+
+    // Animate quantum pixels
+    gsap.from(".quantum-pixel", {
+        duration: 1.5,
+        scale: 0,
+        opacity: 0,
+        stagger: {
+            each: 0.08,
+            from: "random"
+        },
+        ease: "elastic.out(1, 0.5)"
+    });
+
+    // Orbital animation
+    gsap.from(".orbital-hypnosis-core", {
+        duration: 2,
+        scale: 0,
+        rotation: -180,
+        opacity: 0,
+        ease: "power3.out"
+    });
+
+    // ========== HEADER ==========
+    gsap.from("header", {
+        duration: 1,
+        y: -100,
+        opacity: 0,
+        ease: "power3.out",
+        delay: 0.3
+    });
+
+    gsap.from(".nav-links li", {
+        duration: 0.5,
+        y: -30,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power2.out",
+        delay: 0.6
+    });
+
+    // ========== HERO SECTION (below landing) ==========
+    gsap.from(".hero-content h1", {
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top 80%"
+        },
+        duration: 1,
+        x: -100,
+        opacity: 0,
+        ease: "power3.out"
+    });
+
+    gsap.from(".hero-content p", {
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top 80%"
+        },
+        duration: 1,
+        x: -80,
+        opacity: 0,
+        ease: "power3.out",
+        delay: 0.2
+    });
+
+    gsap.from(".hero-buttons .btn", {
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top 80%"
+        },
+        duration: 0.8,
+        y: 50,
+        opacity: 0,
+        stagger: 0.2,
+        ease: "back.out(1.7)",
+        delay: 0.4
+    });
+
+    // ========== ABOUT SECTION ==========
+    gsap.from(".about-image", {
+        scrollTrigger: {
+            trigger: ".about",
+            start: "top 70%"
+        },
+        duration: 1.2,
+        x: -150,
+        opacity: 0,
+        ease: "power3.out"
+    });
+
+    gsap.from(".about-text h2", {
+        scrollTrigger: {
+            trigger: ".about-text",
+            start: "top 80%"
+        },
+        duration: 1,
+        y: 60,
+        opacity: 0,
+        ease: "power3.out"
+    });
+
+    gsap.from(".about-text p", {
+        scrollTrigger: {
+            trigger: ".about-text",
+            start: "top 80%"
+        },
+        duration: 0.8,
+        y: 40,
+        opacity: 0,
+        stagger: 0.15,
+        ease: "power2.out"
+    });
+
+    // Stats with counter animation
+    gsap.from(".stat-item", {
+        scrollTrigger: {
+            trigger: ".stats",
+            start: "top 85%"
+        },
+        duration: 0.8,
+        y: 60,
+        opacity: 0,
+        stagger: 0.15,
+        ease: "back.out(1.4)"
+    });
+
+    // ========== SERVICES SECTION ==========
+    gsap.fromTo(".services h2", 
+        { y: 50, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".services",
+                start: "top 85%"
+            },
+            duration: 1,
+            y: 0,
+            opacity: 1,
+            ease: "power3.out"
+        }
+    );
+
+    gsap.fromTo(".service-card", 
+        { y: 80, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".services-grid",
+                start: "top 85%"
+            },
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.12,
+            ease: "power3.out"
+        }
+    );
+
+    // Service card hover
+    document.querySelectorAll(".service-card").forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+            gsap.to(card, {
+                duration: 0.3,
+                y: -15,
+                scale: 1.02,
+                boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)",
+                ease: "power2.out"
+            });
+            gsap.to(card.querySelector(".service-icon"), {
+                duration: 0.4,
+                scale: 1.2,
+                rotation: 10,
+                ease: "back.out(1.7)"
+            });
+        });
+        card.addEventListener("mouseleave", () => {
+            gsap.to(card, {
+                duration: 0.3,
+                y: 0,
+                scale: 1,
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
+                ease: "power2.out"
+            });
+            gsap.to(card.querySelector(".service-icon"), {
+                duration: 0.4,
+                scale: 1,
+                rotation: 0,
+                ease: "power2.out"
+            });
+        });
+    });
+
+    // ========== TESTIMONIALS SECTION ==========
+    gsap.from(".testimonials h2", {
+        scrollTrigger: {
+            trigger: ".testimonials",
+            start: "top 80%"
+        },
         duration: 1,
         y: 50,
         opacity: 0,
         ease: "power3.out"
     });
 
-    gsap.from(".neural-tagline-stream", {
+    gsap.from(".testimonial-card", {
+        scrollTrigger: {
+            trigger: ".testimonials-grid",
+            start: "top 80%"
+        },
         duration: 1,
-        y: 30,
+        y: 80,
         opacity: 0,
-        ease: "power3.out",
-        delay: 0.3
+        stagger: 0.2,
+        ease: "power3.out"
     });
 
-    gsap.from(".plasma-action-pod", {
-        duration: 0.8,
-        scale: 0.9,
-        opacity: 0,
-        ease: "back.out(1.7)",
-        delay: 0.5
-    });
-
-    // Scroll-triggered animations - simple fade up
-    const animateOnScroll = (selector, stagger = 0.1) => {
-        gsap.utils.toArray(selector).forEach((el) => {
-            gsap.from(el, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                },
-                duration: 0.6,
-                y: 40,
-                opacity: 0,
+    // Testimonial hover
+    document.querySelectorAll(".testimonial-card").forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+            gsap.to(card, {
+                duration: 0.4,
+                y: -10,
+                scale: 1.02,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.12)",
                 ease: "power2.out"
             });
         });
-    };
-
-    // Apply subtle animations
-    animateOnScroll(".service-card");
-    animateOnScroll(".testimonial-card");
-    animateOnScroll(".partner-logo");
-    animateOnScroll(".stat-item");
-
-    // Hover enhancements for cards
-    document.querySelectorAll(".service-card").forEach((card) => {
-        card.addEventListener("mouseenter", () => {
-            gsap.to(card, { duration: 0.3, y: -8, ease: "power2.out" });
-        });
         card.addEventListener("mouseleave", () => {
-            gsap.to(card, { duration: 0.3, y: 0, ease: "power2.out" });
+            gsap.to(card, {
+                duration: 0.4,
+                y: 0,
+                scale: 1,
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
+                ease: "power2.out"
+            });
         });
+    });
+
+    // ========== PARTNERS SECTION ==========
+    gsap.fromTo(".partner-logo", 
+        { y: 40, opacity: 0, scale: 0.8 },
+        {
+            scrollTrigger: {
+                trigger: ".partners-logo-grid",
+                start: "top 85%"
+            },
+            duration: 0.6,
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            stagger: 0.1,
+            ease: "back.out(1.4)"
+        }
+    );
+
+    // Partner hover
+    document.querySelectorAll(".partner-logo").forEach((logo) => {
+        logo.addEventListener("mouseenter", () => {
+            gsap.to(logo, {
+                duration: 0.3,
+                y: -10,
+                scale: 1.1,
+                ease: "power2.out"
+            });
+        });
+        logo.addEventListener("mouseleave", () => {
+            gsap.to(logo, {
+                duration: 0.3,
+                y: 0,
+                scale: 1,
+                ease: "power2.out"
+            });
+        });
+    });
+
+    // ========== FOOTER ==========
+    gsap.fromTo(".footer-content > div", 
+        { y: 50, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: "footer",
+                start: "top 90%"
+            },
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.15,
+            ease: "power3.out"
+        }
+    );
+
+    gsap.fromTo(".footer-social a", 
+        { scale: 0, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".footer-social",
+                start: "top 95%"
+            },
+            duration: 0.5,
+            scale: 1,
+            opacity: 1,
+            stagger: 0.1,
+            ease: "back.out(1.7)"
+        }
+    );
+
+    // ========== PORTFOLIO PAGE ==========
+    gsap.fromTo(".portfolio-item", 
+        { y: 80, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".portfolio-grid",
+                start: "top 85%"
+            },
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.15,
+            ease: "power3.out"
+        }
+    );
+
+    // Portfolio item hover
+    document.querySelectorAll(".portfolio-item").forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            gsap.to(item, {
+                duration: 0.3,
+                scale: 1.03,
+                ease: "power2.out"
+            });
+        });
+        item.addEventListener("mouseleave", () => {
+            gsap.to(item, {
+                duration: 0.3,
+                scale: 1,
+                ease: "power2.out"
+            });
+        });
+    });
+
+    // ========== CONTACT PAGE ==========
+    gsap.fromTo(".contact-info", 
+        { x: -80, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".contact-content",
+                start: "top 80%"
+            },
+            duration: 1,
+            x: 0,
+            opacity: 1,
+            ease: "power3.out"
+        }
+    );
+
+    gsap.fromTo(".contact-form", 
+        { x: 80, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".contact-content",
+                start: "top 80%"
+            },
+            duration: 1,
+            x: 0,
+            opacity: 1,
+            ease: "power3.out",
+            delay: 0.2
+        }
+    );
+
+    gsap.fromTo(".contact-info-item", 
+        { x: -30, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".contact-info",
+                start: "top 80%"
+            },
+            duration: 0.6,
+            x: 0,
+            opacity: 1,
+            stagger: 0.1,
+            ease: "power2.out"
+        }
+    );
+
+    gsap.fromTo(".form-group", 
+        { y: 30, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".contact-form",
+                start: "top 80%"
+            },
+            duration: 0.5,
+            y: 0,
+            opacity: 1,
+            stagger: 0.1,
+            ease: "power2.out"
+        }
+    );
+
+    // ========== GENERAL PAGE ANIMATIONS ==========
+    // Header animation for all pages
+    gsap.from("header", {
+        duration: 0.8,
+        y: -80,
+        opacity: 0,
+        ease: "power3.out"
+    });
+
+    gsap.from(".nav-links li", {
+        duration: 0.5,
+        y: -20,
+        opacity: 0,
+        stagger: 0.08,
+        ease: "power2.out",
+        delay: 0.3
+    });
+
+    // Section headings animation
+    gsap.utils.toArray("section h2").forEach((heading) => {
+        gsap.fromTo(heading, 
+            { y: 40, opacity: 0 },
+            {
+                scrollTrigger: {
+                    trigger: heading,
+                    start: "top 85%"
+                },
+                duration: 0.8,
+                y: 0,
+                opacity: 1,
+                ease: "power3.out"
+            }
+        );
+    });
+
+    // Section paragraphs animation
+    gsap.utils.toArray("section > .container > p").forEach((para) => {
+        gsap.fromTo(para, 
+            { y: 30, opacity: 0 },
+            {
+                scrollTrigger: {
+                    trigger: para,
+                    start: "top 85%"
+                },
+                duration: 0.8,
+                y: 0,
+                opacity: 1,
+                ease: "power3.out"
+            }
+        );
+    });
+
+    // ========== BUTTON HOVER EFFECTS ==========
+    document.querySelectorAll(".btn, .plasma-action-pod").forEach((btn) => {
+        btn.addEventListener("mouseenter", () => {
+            gsap.to(btn, {
+                duration: 0.3,
+                scale: 1.05,
+                ease: "power2.out"
+            });
+        });
+        btn.addEventListener("mouseleave", () => {
+            gsap.to(btn, {
+                duration: 0.3,
+                scale: 1,
+                ease: "power2.out"
+            });
+        });
+    });
+
+    // ========== PARALLAX EFFECT ==========
+    gsap.to(".orbital-hypnosis-core", {
+        scrollTrigger: {
+            trigger: ".quantum-nexus-zone",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1
+        },
+        y: 200,
+        ease: "none"
     });
 });

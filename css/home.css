@@ -331,6 +331,15 @@
   }
 }
 
+/* Ensure content visibility */
+.service-card,
+.partner-logo,
+.testimonial-card,
+.stat-item {
+  opacity: 1;
+  visibility: visible;
+}
+
 @media (max-width: 768px) {
   .cosmic-brand-matrix {
     font-size: 2.5rem;
