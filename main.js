@@ -651,6 +651,218 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     });
 
+    // ========== NEW SECTIONS ANIMATIONS ==========
+    
+    // Why Choose Us - Feature items
+    gsap.fromTo(".feature-item", 
+        { y: 60, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".features-grid",
+                start: "top 85%"
+            },
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.15,
+            ease: "power3.out"
+        }
+    );
+
+    // Process steps
+    gsap.fromTo(".process-step", 
+        { y: 50, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".process-steps",
+                start: "top 85%"
+            },
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        }
+    );
+
+    // CTA section
+    gsap.fromTo(".cta-content", 
+        { y: 50, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".cta-section",
+                start: "top 80%"
+            },
+            duration: 1,
+            y: 0,
+            opacity: 1,
+            ease: "power3.out"
+        }
+    );
+
+    // Mission Vision cards
+    gsap.fromTo(".mv-card", 
+        { y: 60, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".mv-grid",
+                start: "top 85%"
+            },
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.15,
+            ease: "power3.out"
+        }
+    );
+
+    // Value items
+    gsap.fromTo(".value-item", 
+        { x: -50, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".values-grid",
+                start: "top 85%"
+            },
+            duration: 0.8,
+            x: 0,
+            opacity: 1,
+            stagger: 0.15,
+            ease: "power3.out"
+        }
+    );
+
+    // Feature item hover
+    document.querySelectorAll(".feature-item").forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            gsap.to(item, {
+                duration: 0.3,
+                y: -10,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
+                ease: "power2.out"
+            });
+        });
+        item.addEventListener("mouseleave", () => {
+            gsap.to(item, {
+                duration: 0.3,
+                y: 0,
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
+                ease: "power2.out"
+            });
+        });
+    });
+
+    // ========== PAGE HERO ANIMATION ==========
+    gsap.from(".page-hero h1", {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: "power3.out"
+    });
+
+    gsap.from(".page-hero p", {
+        duration: 1,
+        y: 30,
+        opacity: 0,
+        ease: "power3.out",
+        delay: 0.2
+    });
+
+    // ========== AGILE SECTION ==========
+    gsap.fromTo(".agile-step", 
+        { y: 60, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".agile-process",
+                start: "top 85%"
+            },
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.12,
+            ease: "power3.out"
+        }
+    );
+
+    gsap.fromTo(".agile-benefit", 
+        { y: 40, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".agile-benefits",
+                start: "top 85%"
+            },
+            duration: 0.6,
+            y: 0,
+            opacity: 1,
+            stagger: 0.1,
+            ease: "power2.out"
+        }
+    );
+
+    // ========== TECH STACK ==========
+    gsap.fromTo(".tech-category", 
+        { y: 50, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".tech-categories",
+                start: "top 85%"
+            },
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.15,
+            ease: "power3.out"
+        }
+    );
+
+    // ========== CASE STUDY ==========
+    gsap.fromTo(".case-study-challenge, .case-study-solution, .case-study-results", 
+        { y: 60, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".case-study-content",
+                start: "top 85%"
+            },
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        }
+    );
+
+    // ========== INDUSTRIES ==========
+    gsap.fromTo(".industry-item", 
+        { scale: 0.8, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".industries-grid",
+                start: "top 85%"
+            },
+            duration: 0.6,
+            scale: 1,
+            opacity: 1,
+            stagger: 0.1,
+            ease: "back.out(1.4)"
+        }
+    );
+
+    // ========== FAQ ==========
+    gsap.fromTo(".faq-item", 
+        { y: 40, opacity: 0 },
+        {
+            scrollTrigger: {
+                trigger: ".faq-grid",
+                start: "top 85%"
+            },
+            duration: 0.6,
+            y: 0,
+            opacity: 1,
+            stagger: 0.1,
+            ease: "power2.out"
+        }
+    );
+
     // ========== BUTTON HOVER EFFECTS ==========
     document.querySelectorAll(".btn, .plasma-action-pod").forEach((btn) => {
         btn.addEventListener("mouseenter", () => {
