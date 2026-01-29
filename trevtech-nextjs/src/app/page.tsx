@@ -371,28 +371,28 @@ export default function Home() {
 
           <div className="partners-logo-grid">
             <div className="partner-logo">
-              <Image src="/assets/images/ustawi.jpg" alt="Ustawi" width={120} height={60} style={{ maxWidth: '80%', height: 'auto' }} />
+              <Image src="/assets/images/ustawi.jpg" alt="Ustawi" width={120} height={60} style={{ maxWidth: '80%', maxHeight: '60px', objectFit: 'contain' }} />
             </div>
             <div className="partner-logo">
-              <Image src="/assets/images/siviwe.jpg" alt="Siviwe" width={120} height={60} style={{ maxWidth: '80%', height: 'auto' }} />
+              <Image src="/assets/images/siviwe.jpg" alt="Siviwe" width={120} height={60} style={{ maxWidth: '80%', maxHeight: '60px', objectFit: 'contain' }} />
             </div>
             <div className="partner-logo">
-              <Image src="/assets/images/lq.jpeg" alt="LQ" width={120} height={60} style={{ maxWidth: '80%', height: 'auto' }} />
+              <Image src="/assets/images/lq.jpeg" alt="LQ" width={120} height={60} style={{ maxWidth: '80%', maxHeight: '60px', objectFit: 'contain' }} />
             </div>
             <div className="partner-logo">
-              <Image src="/assets/images/afristays-logo.jpg" alt="Afristays" width={120} height={60} style={{ maxWidth: '80%', height: 'auto' }} />
+              <Image src="/assets/images/afristays-logo.jpg" alt="Afristays" width={120} height={60} style={{ maxWidth: '80%', maxHeight: '60px', objectFit: 'contain' }} />
             </div>
             <div className="partner-logo dark-bg">
-              <Image src="/assets/images/whistleafrica.png" alt="Whistle Africa" width={120} height={60} style={{ maxWidth: '80%', height: 'auto' }} />
+              <Image src="/assets/images/whistleafrica.png" alt="Whistle Africa" width={120} height={60} style={{ maxWidth: '80%', maxHeight: '60px', objectFit: 'contain' }} />
             </div>
             <div className="partner-logo">
-              <Image src="/assets/images/partner-whatsapp.jpeg" alt="Partner" width={120} height={60} style={{ maxWidth: '80%', height: 'auto' }} />
+              <Image src="/assets/images/partner-whatsapp.jpeg" alt="Partner" width={120} height={60} style={{ maxWidth: '80%', maxHeight: '60px', objectFit: 'contain' }} />
             </div>
             <div className="partner-logo">
-              <Image src="/assets/images/image 12.jpg" alt="Partner" width={120} height={60} style={{ maxWidth: '80%', height: 'auto' }} />
+              <Image src="/assets/images/image 12.jpg" alt="Partner" width={120} height={60} style={{ maxWidth: '80%', maxHeight: '60px', objectFit: 'contain' }} />
             </div>
             <div className="partner-logo">
-              <Image src="/assets/images/edwarth.jpg" alt="Edwarth" width={120} height={60} style={{ maxWidth: '80%', height: 'auto' }} />
+              <Image src="/assets/images/edwarth.jpg" alt="Edwarth" width={120} height={60} style={{ maxWidth: '80%', maxHeight: '60px', objectFit: 'contain' }} />
             </div>
           </div>
         </div>

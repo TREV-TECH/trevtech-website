@@ -32,7 +32,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-inter), "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -444,6 +444,9 @@ nav {
 .partner-logo img {
   max-width: 80%;
   max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   filter: grayscale(100%);
   transition: all 0.3s ease;
 }

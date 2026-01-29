@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GsapProvider from "@/components/GsapProvider";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "TrevTech Solutions | Web Development, Cybersecurity & Fintech",
@@ -22,11 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <GsapProvider>
+          <Header />
+          {children}
+          <Footer />
+        </GsapProvider>
       </body>
     </html>
   );
