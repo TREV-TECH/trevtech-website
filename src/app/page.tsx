@@ -236,22 +236,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>
-                  Working with TrevTech on our mobile app was a game-changer.
-                  They transformed our vision into a seamless application that
-                  our customers love.
-                </p>
-                <div className="testimonial-author">
-                  <Image src="/assets/images/siviwe.jpg" alt="Client" width={60} height={60} />
-                  <div className="testimonial-author-info">
-                    <h4>James Mwangi</h4>
-                    <p>Founder, AfriStays</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
