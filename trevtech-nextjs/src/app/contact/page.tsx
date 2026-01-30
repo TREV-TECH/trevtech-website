@@ -11,6 +11,8 @@ export default function Contact() {
     budget: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -19,11 +21,31 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({ type: 'success', message: 'Thank you! We\'ll get back to you soon.' });
+        setFormData({ name: '', email: '', phone: '', service: '', budget: '', message: '' });
+      } else {
+        setSubmitStatus({ type: 'error', message: data.error || 'Something went wrong. Please try again.' });
+      }
+    } catch {
+      setSubmitStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -174,7 +196,21 @@ export default function Contact() {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="btn">Send Message</button>
+                <button type="submit" className="btn" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+                {submitStatus && (
+                  <div style={{
+                    marginTop: '1rem',
+                    padding: '1rem',
+                    borderRadius: '8px',
+                    backgroundColor: submitStatus.type === 'success' ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)',
+                    color: submitStatus.type === 'success' ? '#22c55e' : '#ef4444',
+                    border: `1px solid ${submitStatus.type === 'success' ? '#22c55e' : '#ef4444'}`
+                  }}>
+                    {submitStatus.message}
+                  </div>
+                )}
               </form>
             </div>
           </div>

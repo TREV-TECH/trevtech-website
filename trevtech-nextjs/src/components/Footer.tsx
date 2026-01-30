@@ -29,11 +29,22 @@ export default function Footer() {
     setIsLoading(true);
     
     try {
-      // Simulated API call - replace with actual endpoint
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setMessage('🎉 Successfully subscribed!');
-      setMessageType('success');
-      setEmail('');
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        setMessage('🎉 Successfully subscribed!');
+        setMessageType('success');
+        setEmail('');
+      } else {
+        setMessage(data.error || 'Something went wrong. Please try again.');
+        setMessageType('error');
+      }
     } catch {
       setMessage('Something went wrong. Please try again.');
       setMessageType('error');

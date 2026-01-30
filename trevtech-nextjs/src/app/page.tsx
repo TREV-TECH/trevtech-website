@@ -82,7 +82,7 @@ export default function Home() {
 
           <div className="stats">
             <div className="stat-item">
-              <div className="stat-number">150+</div>
+              <div className="stat-number">20+</div>
               <p>Projects Completed</p>
             </div>
             <div className="stat-item">
